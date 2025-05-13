@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowUp } from "lucide-react";
+import gsap from "gsap";
 
 const ScrollToTop: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -15,14 +16,18 @@ const ScrollToTop: React.FC = () => {
   };
 
   const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
+    // Using GSAP for smooth scrolling animation
+    gsap.to(window, {
+      duration: 0.8,
+      scrollTo: 0,
+      ease: "power3.out"
     });
   };
 
   useEffect(() => {
     window.addEventListener("scroll", toggleVisibility);
+    
+    // Cleanup event listener on component unmount
     return () => window.removeEventListener("scroll", toggleVisibility);
   }, []);
 
@@ -32,7 +37,7 @@ const ScrollToTop: React.FC = () => {
         <Button
           onClick={scrollToTop}
           size="icon"
-          className="rounded-full shadow-lg"
+          className="rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
           aria-label="Scroll to top"
         >
           <ArrowUp className="h-5 w-5" />
