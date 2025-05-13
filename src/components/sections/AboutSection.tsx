@@ -1,6 +1,5 @@
 
 import React, { useEffect, useRef } from "react";
-import { Card, CardContent } from "@/components/ui/card";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -11,15 +10,13 @@ const AboutSection: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
-  const statsRef = useRef<HTMLDivElement>(null);
   
   useEffect(() => {
     const section = sectionRef.current;
     const heading = headingRef.current;
     const text = textRef.current;
-    const stats = statsRef.current;
     
-    if (section && heading && text && stats) {
+    if (section && heading && text) {
       gsap.fromTo(
         heading,
         { y: 50, opacity: 0 },
@@ -50,22 +47,6 @@ const AboutSection: React.FC = () => {
           }
         }
       );
-      
-      gsap.fromTo(
-        stats.children,
-        { y: 20, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.6,
-          stagger: 0.1,
-          scrollTrigger: {
-            trigger: stats,
-            start: "top 85%",
-            toggleActions: "play none none none"
-          }
-        }
-      );
     }
   }, []);
 
@@ -76,47 +57,27 @@ const AboutSection: React.FC = () => {
       className="py-20 lg:py-28 bg-secondary/40 dark:bg-secondary/20"
     >
       <div className="container mx-auto px-4">
-        <div className="max-w-3xl mx-auto text-center mb-16">
+        <div className="max-w-4xl mx-auto text-center mb-16">
           <h2 
             ref={headingRef}
             className="text-3xl md:text-4xl font-bold mb-6"
           >
-            Crafting Digital Excellence Since 2015
+            About Us
           </h2>
           <div ref={textRef} className="space-y-4 text-muted-foreground">
             <p>
-              At DigiCraft Studios, we're passionate about transforming visions into captivating digital realities. With a team of talented designers, developers, and strategists, we've helped hundreds of businesses achieve their digital goals.
+              At Web Design Studio, we specialize in crafting stunning, responsive websites that not only look great but perform seamlessly across all devices. Based in Andhra Pradesh, India, our mission is to create digital experiences that inspire and deliver real results.
             </p>
             <p>
-              We believe great design is more than aesthetics – it's about creating meaningful experiences that engage, inspire, and deliver results. Our human-centered approach ensures every project is tailored to meet the unique needs of your audience.
+              From intuitive web design and e-commerce integration to impactful graphic design and branding, we offer comprehensive services tailored to meet the unique needs of each client. With a streamlined process—from initial consultation and concept development to quality assurance and ongoing support—we ensure every project is delivered with precision and creativity.
+            </p>
+            <p>
+              Whether you're a small business or an online store, our affordable pricing packages and dedicated team make building your online presence simple, effective, and engaging.
             </p>
           </div>
         </div>
-        
-        <div ref={statsRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <StatCard number="850+" label="Projects Completed" />
-          <StatCard number="250+" label="Happy Clients" />
-          <StatCard number="15+" label="Industry Awards" />
-          <StatCard number="8+" label="Years Experience" />
-        </div>
       </div>
     </section>
-  );
-};
-
-interface StatCardProps {
-  number: string;
-  label: string;
-}
-
-const StatCard: React.FC<StatCardProps> = ({ number, label }) => {
-  return (
-    <Card className="glass-card border-2 border-primary/10 overflow-hidden">
-      <CardContent className="p-6 text-center">
-        <p className="text-4xl md:text-5xl font-bold text-primary mb-2">{number}</p>
-        <p className="text-muted-foreground">{label}</p>
-      </CardContent>
-    </Card>
   );
 };
 

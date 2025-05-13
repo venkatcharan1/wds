@@ -2,9 +2,7 @@
 import React, { useEffect, useRef } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, MessageCircle, MapPin } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -42,7 +40,7 @@ const ContactSection: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
   const cardsRef = useRef<HTMLDivElement>(null);
-  const formRef = useRef<HTMLFormElement>(null);
+  const formRef = useRef<HTMLDivElement>(null);
   
   useEffect(() => {
     const section = sectionRef.current;
@@ -100,12 +98,6 @@ const ContactSection: React.FC = () => {
     }
   }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission logic here
-    console.log("Form submitted");
-  };
-
   return (
     <section 
       id="contact"
@@ -136,10 +128,10 @@ const ContactSection: React.FC = () => {
             link="mailto:telugumobilecoder@gmail.com"
           />
           <ContactCard
-            icon={<Phone className="h-6 w-6" />}
-            title="Call Us"
+            icon={<MessageCircle className="h-6 w-6" />}
+            title="WhatsApp Us"
             details="+91 6302158556"
-            link="tel:+916302158556"
+            link="https://wa.me/+916302158556"
           />
           <ContactCard
             icon={<MapPin className="h-6 w-6" />}
@@ -148,68 +140,10 @@ const ContactSection: React.FC = () => {
           />
         </div>
         
-        <Card className="max-w-4xl mx-auto border-primary/10 overflow-hidden bg-card shadow-xl">
-          <CardContent className="p-0">
-            <div className="grid grid-cols-1 lg:grid-cols-5">
-              <div className="lg:col-span-2 bg-primary p-8 text-primary-foreground flex flex-col justify-center">
-                <h3 className="text-2xl font-bold mb-4">Let's start a conversation</h3>
-                <p className="mb-6">Fill out the form and we'll get back to you within 24 hours.</p>
-                <div className="space-y-4">
-                  <div className="flex items-center space-x-3">
-                    <Mail className="h-5 w-5" />
-                    <span>telugumobilecoder@gmail.com</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <Phone className="h-5 w-5" />
-                    <span>+91 6302158556</span>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="lg:col-span-3 p-8">
-                <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                      <label htmlFor="name" className="text-sm font-medium">
-                        Name
-                      </label>
-                      <Input id="name" placeholder="Your name" required />
-                    </div>
-                    <div className="space-y-2">
-                      <label htmlFor="email" className="text-sm font-medium">
-                        Email
-                      </label>
-                      <Input id="email" type="email" placeholder="Your email" required />
-                    </div>
-                  </div>
-                  
-                  <div className="space-y-2">
-                    <label htmlFor="subject" className="text-sm font-medium">
-                      Subject
-                    </label>
-                    <Input id="subject" placeholder="Project inquiry" required />
-                  </div>
-                  
-                  <div className="space-y-2">
-                    <label htmlFor="message" className="text-sm font-medium">
-                      Message
-                    </label>
-                    <Textarea 
-                      id="message" 
-                      placeholder="Tell us about your project and requirements..." 
-                      className="min-h-[150px]"
-                      required
-                    />
-                  </div>
-                  
-                  <Button type="submit" size="lg" className="w-full">
-                    Send Message
-                  </Button>
-                </form>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <div className="max-w-4xl mx-auto" ref={formRef}>
+          <div className="visme_d" data-title="my portfolio" data-url="eprgzg7x-my-portfolio?fullPage=true" data-domain="forms" data-full-page="true" data-min-height="100vh" data-form-id="65786"></div>
+          <script src="https://static-bundles.visme.co/forms/vismeforms-embed.js"></script>
+        </div>
       </div>
     </section>
   );
