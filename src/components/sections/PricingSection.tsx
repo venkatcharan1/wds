@@ -1,9 +1,9 @@
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Check } from "lucide-react";
+import { Check, WhatsApp } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -17,24 +17,20 @@ interface PricingFeature {
 
 interface PricingPlanProps {
   title: string;
-  price: {
-    monthly: string;
-    yearly: string;
-  };
+  price: string;
   description: string;
   features: PricingFeature[];
   popular?: boolean;
   buttonText?: string;
 }
 
-const PricingPlan: React.FC<PricingPlanProps & { isYearly: boolean }> = ({
+const PricingPlan: React.FC<PricingPlanProps> = ({
   title,
   price,
   description,
   features,
   popular = false,
-  buttonText = "Get Started",
-  isYearly
+  buttonText = "Get Started"
 }) => {
   return (
     <Card 
@@ -55,10 +51,7 @@ const PricingPlan: React.FC<PricingPlanProps & { isYearly: boolean }> = ({
       <CardHeader className="pb-4">
         <CardTitle className="text-xl">{title}</CardTitle>
         <div className="mt-4 flex items-baseline text-5xl font-extrabold">
-          {isYearly ? price.yearly : price.monthly}
-          <span className="ml-1 text-2xl font-medium text-muted-foreground">
-            {isYearly ? "/year" : "/month"}
-          </span>
+          {price}
         </div>
         <CardDescription className="mt-4">
           {description}
@@ -81,16 +74,18 @@ const PricingPlan: React.FC<PricingPlanProps & { isYearly: boolean }> = ({
       </CardContent>
       
       <CardFooter>
-        <Button variant={popular ? "default" : "outline"} className="w-full">
-          {buttonText}
-        </Button>
+        <a href="https://wa.me/+916302158556" className="w-full">
+          <Button variant={popular ? "default" : "outline"} className="w-full">
+            <WhatsApp className="mr-2 h-4 w-4" />
+            {buttonText}
+          </Button>
+        </a>
       </CardFooter>
     </Card>
   );
 };
 
 const PricingSection: React.FC = () => {
-  const [isYearly, setIsYearly] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
   const tabsRef = useRef<HTMLDivElement>(null);
@@ -155,10 +150,7 @@ const PricingSection: React.FC = () => {
   const websitePlans = [
     {
       title: "Basic",
-      price: {
-        monthly: "₹4000",
-        yearly: "₹40000"
-      },
+      price: "₹4000",
       description: "Perfect for small businesses just getting started with an online presence.",
       features: [
         { text: "3 Custom Pages", included: true },
@@ -173,10 +165,7 @@ const PricingSection: React.FC = () => {
     },
     {
       title: "Standard",
-      price: {
-        monthly: "₹5000",
-        yearly: "₹50000"
-      },
+      price: "₹5000",
       description: "Our most popular plan, ideal for established businesses looking to grow.",
       features: [
         { text: "5 Custom Pages", included: true },
@@ -192,10 +181,7 @@ const PricingSection: React.FC = () => {
     },
     {
       title: "Premium",
-      price: {
-        monthly: "₹6000",
-        yearly: "₹60000"
-      },
+      price: "₹6000",
       description: "For businesses seeking a comprehensive digital presence with all features.",
       features: [
         { text: "10 Custom Pages", included: true },
@@ -213,10 +199,7 @@ const PricingSection: React.FC = () => {
   const ecommercePlans = [
     {
       title: "Basic E-Commerce",
-      price: {
-        monthly: "₹6000",
-        yearly: "₹60000"
-      },
+      price: "₹6000",
       description: "Start selling online with a straightforward e-commerce website.",
       features: [
         { text: "Up to 20 Products", included: true },
@@ -231,10 +214,7 @@ const PricingSection: React.FC = () => {
     },
     {
       title: "Standard E-Commerce",
-      price: {
-        monthly: "₹7000",
-        yearly: "₹70000"
-      },
+      price: "₹7000",
       description: "Grow your online store with enhanced features and capabilities.",
       features: [
         { text: "Up to 100 Products", included: true },
@@ -250,10 +230,7 @@ const PricingSection: React.FC = () => {
     },
     {
       title: "Premium E-Commerce",
-      price: {
-        monthly: "₹8000",
-        yearly: "₹80000"
-      },
+      price: "₹8000",
       description: "Enterprise-level online store with all features for maximum growth.",
       features: [
         { text: "Unlimited Products", included: true },
@@ -285,27 +262,6 @@ const PricingSection: React.FC = () => {
           <p className="text-muted-foreground">
             Choose the perfect package for your business needs. All plans include ongoing support and maintenance.
           </p>
-          
-          <div ref={tabsRef} className="mt-8 flex justify-center">
-            <div className="bg-secondary rounded-full p-1 inline-flex">
-              <button
-                onClick={() => setIsYearly(false)}
-                className={`px-6 py-2 rounded-full text-sm font-medium transition-colors ${
-                  !isYearly ? 'bg-primary text-primary-foreground' : 'text-muted-foreground'
-                }`}
-              >
-                Monthly
-              </button>
-              <button
-                onClick={() => setIsYearly(true)}
-                className={`px-6 py-2 rounded-full text-sm font-medium transition-colors ${
-                  isYearly ? 'bg-primary text-primary-foreground' : 'text-muted-foreground'
-                }`}
-              >
-                Yearly (Save 17%)
-              </button>
-            </div>
-          </div>
         </div>
         
         <Tabs defaultValue="website" className="w-full">
@@ -329,7 +285,6 @@ const PricingSection: React.FC = () => {
                   description={plan.description}
                   features={plan.features}
                   popular={plan.popular}
-                  isYearly={isYearly}
                 />
               ))}
             </div>
@@ -347,7 +302,6 @@ const PricingSection: React.FC = () => {
                   description={plan.description}
                   features={plan.features}
                   popular={plan.popular}
-                  isYearly={isYearly}
                 />
               ))}
             </div>
@@ -358,7 +312,12 @@ const PricingSection: React.FC = () => {
           <p className="text-muted-foreground mb-4">
             Need a custom solution for your specific requirements?
           </p>
-          <Button size="lg" className="rounded-full px-8">Contact Us for Custom Quote</Button>
+          <a href="https://wa.me/+916302158556">
+            <Button size="lg" className="rounded-full px-8">
+              <WhatsApp className="mr-2 h-5 w-5" />
+              Contact Us for Custom Quote
+            </Button>
+          </a>
         </div>
       </div>
     </section>
