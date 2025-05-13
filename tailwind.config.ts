@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,7 +62,13 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				// Custom colors for our 3D agency website
+				'agency-purple': '#8B5CF6',
+				'agency-blue': '#3B82F6',
+				'agency-indigo': '#4F46E5',
+				'agency-pink': '#EC4899',
+				'agency-dark': '#1A1F2C',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,11 +91,40 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'float': {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-10px)' }
+				},
+				'fade-in': {
+					'0%': { opacity: '0', transform: 'translateY(20px)' },
+					'100%': { opacity: '1', transform: 'translateY(0)' }
+				},
+				'fade-in-right': {
+					'0%': { opacity: '0', transform: 'translateX(-20px)' },
+					'100%': { opacity: '1', transform: 'translateX(0)' }
+				},
+				'spin-slow': {
+					'0%': { transform: 'rotate(0deg)' },
+					'100%': { transform: 'rotate(360deg)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'float': 'float 4s ease-in-out infinite',
+				'fade-in': 'fade-in 0.8s ease-out forwards',
+				'fade-in-right': 'fade-in-right 0.8s ease-out forwards',
+				'spin-slow': 'spin-slow 12s linear infinite'
+			},
+			backgroundImage: {
+				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+				'hero-pattern': 'linear-gradient(to right bottom, rgba(139, 92, 246, 0.8), rgba(79, 70, 229, 0.8))',
+				'card-gradient': 'linear-gradient(to right bottom, rgba(59, 130, 246, 0.2), rgba(236, 72, 153, 0.2))'
+			},
+			fontFamily: {
+				'poppins': ['Poppins', 'sans-serif'],
+				'inter': ['Inter', 'sans-serif']
 			}
 		}
 	},
