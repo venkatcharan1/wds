@@ -12,6 +12,7 @@ import {
   HeartHandshake 
 } from "lucide-react";
 
+// Register the plugin
 gsap.registerPlugin(ScrollTrigger);
 
 interface ProcessStepProps {

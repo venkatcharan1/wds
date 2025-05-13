@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+// Register the plugin
 gsap.registerPlugin(ScrollTrigger);
 
 const AboutSection: React.FC = () => {

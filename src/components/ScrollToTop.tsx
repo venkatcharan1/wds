@@ -3,6 +3,10 @@ import React, { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowUp } from "lucide-react";
 import gsap from "gsap";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+
+// Register the ScrollToPlugin
+gsap.registerPlugin(ScrollToPlugin);
 
 const ScrollToTop: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);

@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+// Register the plugin
 gsap.registerPlugin(ScrollTrigger);
 
 interface PortfolioItemProps {
