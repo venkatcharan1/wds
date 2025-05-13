@@ -1,9 +1,8 @@
-
 import React, { useEffect, useRef } from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Check, WhatsApp } from "lucide-react";
+import { Check, MessageCircle } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -76,7 +75,7 @@ const PricingPlan: React.FC<PricingPlanProps> = ({
       <CardFooter>
         <a href="https://wa.me/+916302158556" className="w-full">
           <Button variant={popular ? "default" : "outline"} className="w-full">
-            <WhatsApp className="mr-2 h-4 w-4" />
+            <MessageCircle className="mr-2 h-4 w-4" />
             {buttonText}
           </Button>
         </a>
@@ -314,7 +313,7 @@ const PricingSection: React.FC = () => {
           </p>
           <a href="https://wa.me/+916302158556">
             <Button size="lg" className="rounded-full px-8">
-              <WhatsApp className="mr-2 h-5 w-5" />
+              <MessageCircle className="mr-2 h-5 w-5" />
               Contact Us for Custom Quote
             </Button>
           </a>
