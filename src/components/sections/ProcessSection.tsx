@@ -7,8 +7,8 @@ import {
   MessageSquare, 
   Lightbulb, 
   PenTool, 
-  Laptop, 
-  CheckCircle, 
+  Repeat, 
+  Clock,
   HeartHandshake 
 } from "lucide-react";
 
@@ -106,21 +106,21 @@ const ProcessSection: React.FC = () => {
     },
     {
       number: "03",
-      title: "Design & Development",
-      description: "We transform concepts into visually stunning designs and functional code with attention to detail.",
-      icon: <PenTool className="h-6 w-6" />
+      title: "Feedback and Revisions",
+      description: "We collaborate closely with you, incorporating your feedback until the design meets your expectations.",
+      icon: <Repeat className="h-6 w-6" />
     },
     {
       number: "04",
-      title: "Feedback & Revisions",
-      description: "We collaborate closely with you, incorporating your feedback until the design meets your expectations.",
-      icon: <Laptop className="h-6 w-6" />
+      title: "Quality Assurance",
+      description: "Rigorous testing across devices and browsers ensures your website functions flawlessly.",
+      icon: <PenTool className="h-6 w-6" />
     },
     {
       number: "05",
-      title: "Quality Assurance",
-      description: "Rigorous testing across devices and browsers ensures your website functions flawlessly.",
-      icon: <CheckCircle className="h-6 w-6" />
+      title: "Timely Delivery",
+      description: "We deliver your project on schedule, ensuring you can launch your digital presence without delays.",
+      icon: <Clock className="h-6 w-6" />
     },
     {
       number: "06",
@@ -142,7 +142,7 @@ const ProcessSection: React.FC = () => {
             ref={headingRef}
             className="text-3xl md:text-4xl font-bold mb-6"
           >
-            Our Work Process
+            Work Process
           </h2>
           <p className="text-muted-foreground">
             We follow a proven methodology that ensures quality results and client satisfaction at every step.

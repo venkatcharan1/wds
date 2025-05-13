@@ -2,7 +2,7 @@
 import React, { useEffect, useRef } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Code, ShoppingBag, Palette } from "lucide-react";
+import { ArrowRight, Smartphone, ShoppingBag, Palette } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -77,14 +77,16 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, icon }) =
 const ServicesSection: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
+  const subtitleRef = useRef<HTMLParagraphElement>(null);
   const cardsRef = useRef<HTMLDivElement>(null);
   
   useEffect(() => {
     const section = sectionRef.current;
     const heading = headingRef.current;
+    const subtitle = subtitleRef.current;
     const cards = cardsRef.current;
     
-    if (section && heading && cards) {
+    if (section && heading && subtitle && cards) {
       gsap.fromTo(
         heading,
         { y: 50, opacity: 0 },
@@ -92,6 +94,22 @@ const ServicesSection: React.FC = () => {
           y: 0,
           opacity: 1,
           duration: 0.8,
+          scrollTrigger: {
+            trigger: section,
+            start: "top 75%",
+            toggleActions: "play none none none"
+          }
+        }
+      );
+      
+      gsap.fromTo(
+        subtitle,
+        { y: 50, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          delay: 0.1,
           scrollTrigger: {
             trigger: section,
             start: "top 75%",
@@ -128,12 +146,15 @@ const ServicesSection: React.FC = () => {
         <div className="max-w-3xl mx-auto text-center mb-16">
           <h2 
             ref={headingRef}
-            className="text-3xl md:text-4xl font-bold mb-6"
+            className="text-3xl md:text-4xl font-bold mb-4"
           >
             What We Offer
           </h2>
-          <p className="text-muted-foreground">
-            We provide comprehensive digital solutions tailored to your unique business needs, from stunning websites to complete branding packages.
+          <p 
+            ref={subtitleRef}
+            className="text-muted-foreground"
+          >
+            Services we can help you with.
           </p>
         </div>
         
@@ -142,19 +163,19 @@ const ServicesSection: React.FC = () => {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
           <ServiceCard
-            icon={<Code className="h-8 w-8 text-primary" />}
+            icon={<Smartphone className="h-8 w-8 text-primary" />}
             title="Responsive Web Design"
-            description="We create custom, mobile-first websites that look stunning and function flawlessly across all devices and browsers."
+            description="Create websites that adapt seamlessly to different devices and screen sizes. A responsive design ensures an optimal user experience, regardless of whether visitors are using desktops, tablets, or smartphones."
           />
           <ServiceCard
             icon={<ShoppingBag className="h-8 w-8 text-primary" />}
             title="E-Commerce Integration"
-            description="Transform your online presence into a powerful sales channel with our custom e-commerce solutions and payment gateways."
+            description="Maximize the efficacy of online commerce by integrating cutting-edge e-commerce solutions. Add secure payment gateways, intuitive user interfaces, and product catalogs."
           />
           <ServiceCard
             icon={<Palette className="h-8 w-8 text-primary" />}
             title="Graphic Design & Branding"
-            description="Establish a cohesive brand identity with our comprehensive branding services, from logos to complete brand guidelines."
+            description="Elevate brand identity with visually appealing graphic design, logos, and cohesive branding elements."
           />
         </div>
       </div>

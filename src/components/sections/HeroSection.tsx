@@ -47,13 +47,13 @@ const HeroSection: React.FC = () => {
             ref={titleRef}
             className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 bg-gradient-to-br from-agency-purple via-agency-indigo to-agency-blue bg-clip-text text-transparent"
           >
-            Creating Digital Experiences That Inspire
+            Web Design Services
           </h1>
           <p 
             ref={subtitleRef}
             className="text-lg md:text-xl text-muted-foreground mb-8 max-w-xl"
           >
-            We blend cutting-edge technology with stunning design to create websites that captivate your audience and elevate your brand.
+            Creating Digital Experiences That Inspire.
           </p>
           <div ref={ctaRef} className="flex flex-wrap gap-4">
             <Button size="lg" className="rounded-full px-8 group">

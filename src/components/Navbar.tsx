@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState } from "react";
 import ThemeToggle from "./ThemeToggle";
-import { Search, Menu, X } from "lucide-react";
+import { Search, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -71,7 +71,7 @@ export default function Navbar() {
       <div className="container mx-auto px-4 flex items-center justify-between">
         <a href="#" className="flex items-center">
           <span className="text-foreground font-poppins font-bold text-xl">
-            DigiCraft<span className="text-primary">Studios</span>
+            Web Design<span className="text-primary">Studio</span>
           </span>
         </a>
 

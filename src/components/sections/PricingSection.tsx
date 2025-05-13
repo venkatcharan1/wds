@@ -156,56 +156,56 @@ const PricingSection: React.FC = () => {
     {
       title: "Basic",
       price: {
-        monthly: "$999",
-        yearly: "$9,990"
+        monthly: "₹4000",
+        yearly: "₹40000"
       },
       description: "Perfect for small businesses just getting started with an online presence.",
       features: [
-        { text: "Responsive Website Design", included: true },
-        { text: "5 Custom Pages", included: true },
+        { text: "3 Custom Pages", included: true },
+        { text: "Responsive Design", included: true },
+        { text: "Contact Form", included: true },
+        { text: "1 Revision", included: true },
         { text: "Basic SEO Setup", included: true },
-        { text: "Contact Form Integration", included: true },
-        { text: "Social Media Integration", included: true },
+        { text: "Social Media Integration", included: false },
         { text: "Content Management System", included: false },
-        { text: "Custom Animations", included: false },
-        { text: "Priority Support", included: false }
+        { text: "Custom Animations", included: false }
       ]
     },
     {
       title: "Standard",
       price: {
-        monthly: "$1,999",
-        yearly: "$19,990"
+        monthly: "₹5000",
+        yearly: "₹50000"
       },
       description: "Our most popular plan, ideal for established businesses looking to grow.",
       features: [
-        { text: "Responsive Website Design", included: true },
-        { text: "10 Custom Pages", included: true },
-        { text: "Advanced SEO Optimization", included: true },
-        { text: "Contact Form Integration", included: true },
+        { text: "5 Custom Pages", included: true },
+        { text: "Responsive Design", included: true },
+        { text: "Contact Form", included: true },
+        { text: "3 Revisions", included: true },
+        { text: "Advanced SEO Setup", included: true },
         { text: "Social Media Integration", included: true },
         { text: "Content Management System", included: true },
-        { text: "Custom Animations", included: true },
-        { text: "Priority Support", included: false }
+        { text: "Custom Animations", included: false }
       ],
       popular: true
     },
     {
       title: "Premium",
       price: {
-        monthly: "$3,999",
-        yearly: "$39,990"
+        monthly: "₹6000",
+        yearly: "₹60000"
       },
       description: "For businesses seeking a comprehensive digital presence with all features.",
       features: [
-        { text: "Responsive Website Design", included: true },
-        { text: "Unlimited Custom Pages", included: true },
-        { text: "Advanced SEO Optimization", included: true },
-        { text: "Contact Form Integration", included: true },
+        { text: "10 Custom Pages", included: true },
+        { text: "Responsive Design", included: true },
+        { text: "Contact Form", included: true },
+        { text: "Unlimited Revisions", included: true },
+        { text: "Advanced SEO Setup", included: true },
         { text: "Social Media Integration", included: true },
         { text: "Content Management System", included: true },
-        { text: "Custom Animations", included: true },
-        { text: "Priority Support", included: true }
+        { text: "Custom Animations", included: true }
       ]
     }
   ];
@@ -214,36 +214,36 @@ const PricingSection: React.FC = () => {
     {
       title: "Basic E-Commerce",
       price: {
-        monthly: "$1,999",
-        yearly: "$19,990"
+        monthly: "₹6000",
+        yearly: "₹60000"
       },
       description: "Start selling online with a straightforward e-commerce website.",
       features: [
-        { text: "Responsive E-Commerce Website", included: true },
-        { text: "Up to 50 Products", included: true },
+        { text: "Up to 20 Products", included: true },
+        { text: "Responsive Design", included: true },
         { text: "Basic Payment Gateway", included: true },
-        { text: "Simple Product Categorization", included: true },
+        { text: "Product Categories", included: true },
         { text: "Order Management", included: true },
         { text: "Customer Accounts", included: false },
-        { text: "Abandoned Cart Recovery", included: false },
+        { text: "Inventory Management", included: false },
         { text: "Marketing Integrations", included: false }
       ]
     },
     {
       title: "Standard E-Commerce",
       price: {
-        monthly: "$3,499",
-        yearly: "$34,990"
+        monthly: "₹7000",
+        yearly: "₹70000"
       },
       description: "Grow your online store with enhanced features and capabilities.",
       features: [
-        { text: "Responsive E-Commerce Website", included: true },
-        { text: "Up to 500 Products", included: true },
+        { text: "Up to 100 Products", included: true },
+        { text: "Responsive Design", included: true },
         { text: "Multiple Payment Gateways", included: true },
-        { text: "Advanced Product Categorization", included: true },
+        { text: "Advanced Product Categories", included: true },
         { text: "Order Management", included: true },
         { text: "Customer Accounts", included: true },
-        { text: "Abandoned Cart Recovery", included: true },
+        { text: "Inventory Management", included: true },
         { text: "Marketing Integrations", included: false }
       ],
       popular: true
@@ -251,18 +251,18 @@ const PricingSection: React.FC = () => {
     {
       title: "Premium E-Commerce",
       price: {
-        monthly: "$5,999",
-        yearly: "$59,990"
+        monthly: "₹8000",
+        yearly: "₹80000"
       },
       description: "Enterprise-level online store with all features for maximum growth.",
       features: [
-        { text: "Responsive E-Commerce Website", included: true },
         { text: "Unlimited Products", included: true },
+        { text: "Responsive Design", included: true },
         { text: "Multiple Payment Gateways", included: true },
-        { text: "Advanced Product Categorization", included: true },
+        { text: "Advanced Product Categories", included: true },
         { text: "Order Management", included: true },
         { text: "Customer Accounts", included: true },
-        { text: "Abandoned Cart Recovery", included: true },
+        { text: "Inventory Management", included: true },
         { text: "Marketing Integrations", included: true }
       ]
     }
@@ -280,7 +280,7 @@ const PricingSection: React.FC = () => {
             ref={headingRef}
             className="text-3xl md:text-4xl font-bold mb-6"
           >
-            Our Pricing Plans
+            Our Pricing
           </h2>
           <p className="text-muted-foreground">
             Choose the perfect package for your business needs. All plans include ongoing support and maintenance.
@@ -311,7 +311,7 @@ const PricingSection: React.FC = () => {
         <Tabs defaultValue="website" className="w-full">
           <div className="flex justify-center mb-8">
             <TabsList className="grid w-full max-w-md grid-cols-2">
-              <TabsTrigger value="website">Business Website</TabsTrigger>
+              <TabsTrigger value="website">Small Business Website</TabsTrigger>
               <TabsTrigger value="ecommerce">E-Commerce Store</TabsTrigger>
             </TabsList>
           </div>

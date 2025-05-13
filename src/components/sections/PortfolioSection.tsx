@@ -110,34 +110,34 @@ const PortfolioSection: React.FC = () => {
 
   const portfolioItems = [
     {
-      title: "Eco Commerce Platform",
-      category: "E-Commerce Design",
-      imageSrc: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+      title: "Brand Identity",
+      category: "Logo Design",
+      imageSrc: "https://images.unsplash.com/photo-1626785774573-4b799315345d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
     },
     {
-      title: "Mountain Travel App",
-      category: "Mobile App Design",
-      imageSrc: "https://images.unsplash.com/photo-1501854140801-50d01698950b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+      title: "Adventure App",
+      category: "Mobile UI Design",
+      imageSrc: "https://images.unsplash.com/photo-1512295767273-ac109ac3acfa?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
     },
     {
-      title: "Creative Agency Website",
+      title: "Creative Agency",
       category: "Web Design",
-      imageSrc: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+      imageSrc: "https://images.unsplash.com/photo-1634586369152-803a1ddca365?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
     },
     {
       title: "Tech Blog Platform",
       category: "Web Development",
-      imageSrc: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+      imageSrc: "https://images.unsplash.com/photo-1507721999472-8ed4421c4af2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
     },
     {
-      title: "Fashion Brand Identity",
+      title: "Fashion Brand",
       category: "Branding",
-      imageSrc: "https://images.unsplash.com/photo-1493397212122-2b85dda8106b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+      imageSrc: "https://images.unsplash.com/photo-1609142621143-2f3aa4356f7b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
     },
     {
-      title: "Forest Conservation Portal",
+      title: "Eco Initiative",
       category: "Web Development",
-      imageSrc: "https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+      imageSrc: "https://images.unsplash.com/photo-1580927752452-89d86da3fa0a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
     }
   ];
 
@@ -153,7 +153,7 @@ const PortfolioSection: React.FC = () => {
             ref={headingRef}
             className="text-3xl md:text-4xl font-bold mb-6"
           >
-            Our Recent Projects
+            Sample Projects
           </h2>
           <p className="text-muted-foreground">
             Explore our latest work showcasing the diversity of our skills and the quality of our execution.

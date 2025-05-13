@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
           <div>
             <a href="#" className="inline-block mb-4">
               <span className="text-foreground font-poppins font-bold text-2xl">
-                DigiCraft<span className="text-primary">Studios</span>
+                Web Design<span className="text-primary">Studio</span>
               </span>
             </a>
             <p className="text-muted-foreground mb-6 max-w-md">
@@ -68,13 +68,13 @@ const Footer: React.FC = () => {
                 <a href="#about" className="text-muted-foreground hover:text-primary transition-colors">About</a>
               </li>
               <li>
-                <a href="#services" className="text-muted-foreground hover:text-primary transition-colors">Services</a>
+                <a href="#services" className="text-muted-foreground hover:text-primary transition-colors">Our Services</a>
               </li>
               <li>
                 <a href="#pricing" className="text-muted-foreground hover:text-primary transition-colors">Pricing</a>
               </li>
               <li>
-                <a href="#contact" className="text-muted-foreground hover:text-primary transition-colors">Contact</a>
+                <a href="#contact" className="text-muted-foreground hover:text-primary transition-colors">Contact Us</a>
               </li>
             </ul>
           </div>
@@ -83,40 +83,59 @@ const Footer: React.FC = () => {
             <h4 className="font-bold text-lg mb-4">Services</h4>
             <ul className="space-y-3">
               <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">Web Design</a>
-              </li>
-              <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">E-Commerce Development</a>
+                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">Motion Animation</a>
               </li>
               <li>
                 <a href="#" className="text-muted-foreground hover:text-primary transition-colors">Graphic Design</a>
               </li>
               <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">Motion Design</a>
+                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">Web Design</a>
               </li>
               <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">Mobile App Design</a>
+                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">Motion Design</a>
               </li>
             </ul>
           </div>
           
           <div>
-            <h4 className="font-bold text-lg mb-4">Newsletter</h4>
-            <p className="text-muted-foreground mb-4">
-              Stay up to date with the latest news, updates and special offers.
-            </p>
-            <div className="flex space-x-2">
-              <Input placeholder="Your email address" className="rounded-l-full" />
-              <Button size="icon" className="rounded-full">
-                <ArrowRight className="h-4 w-4" />
-              </Button>
+            <h4 className="font-bold text-lg mb-4">Contact Info</h4>
+            <ul className="space-y-3">
+              <li className="flex items-start">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                <span className="text-muted-foreground">Andhra Pradesh, India</span>
+              </li>
+              <li className="flex items-start">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                <a href="mailto:telugumobilecoder@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">telugumobilecoder@gmail.com</a>
+              </li>
+              <li className="flex items-start">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+                <a href="tel:+916302158556" className="text-muted-foreground hover:text-primary transition-colors">+91 6302158556</a>
+              </li>
+            </ul>
+            
+            <div className="mt-6">
+              <h4 className="font-bold text-lg mb-4">Newsletter</h4>
+              <div className="flex space-x-2">
+                <Input placeholder="Your email address" className="rounded-l-full" />
+                <Button size="icon" className="rounded-full">
+                  <ArrowRight className="h-4 w-4" />
+                </Button>
+              </div>
             </div>
           </div>
         </div>
         
         <div className="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-muted-foreground text-sm">
-            &copy; {new Date().getFullYear()} DigiCraft Studios. All rights reserved.
+            &copy; {new Date().getFullYear()} Web Design Studio. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <a href="#" className="text-muted-foreground hover:text-primary text-sm transition-colors">
