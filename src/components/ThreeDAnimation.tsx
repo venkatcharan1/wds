@@ -8,7 +8,7 @@ import { useIsMobile } from "@/hooks/use-mobile";
 const FloatingLogo = () => {
   const mesh = useRef<THREE.Mesh>(null!);
   const texture = new THREE.TextureLoader().load(
-    "https://res.cloudinary.com/dsgdashea/image/upload/v1715153907/a-captivating-cinematic-portrait-of-a-sleek-monito-JcgjDqViSlSwkZxvoQ2u6A-f87Th7i-SeOdw_wp_Z-QnA-removebg-preview_fzg7vg.png"
+    "https://res.cloudinary.com/dsgdashea/image/upload/v1715139938/a-captivating-cinematic-shot-of-a-computer-monitor-gUFbI5oyRhe8Rx9cDloaoA-dStlFx27QEy92fWl6wNUwQ_zksl2m.jpg"
   );
   
   // Create material with transparent background
