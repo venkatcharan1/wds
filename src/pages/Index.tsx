@@ -61,14 +61,17 @@ const Index = () => {
     });
 
     // Load the Visme form script
-    const script = document.createElement('script');
-    script.src = "https://static-bundles.visme.co/forms/vismeforms-embed.js";
-    script.async = true;
-    document.body.appendChild(script);
-
+    const loadVismeScript = () => {
+      const script = document.createElement('script');
+      script.src = "https://static-bundles.visme.co/forms/vismeforms-embed.js";
+      script.async = true;
+      document.body.appendChild(script);
+    };
+    
+    loadVismeScript();
+    
     return () => {
-      // Clean up the script when component unmounts
-      document.body.removeChild(script);
+      // We don't remove the script since it may be needed on page refresh
     };
   }, []);
 

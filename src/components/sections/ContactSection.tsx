@@ -1,7 +1,6 @@
 
 import React, { useEffect, useRef } from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { Mail, MessageCircle, MapPin } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -141,8 +140,7 @@ const ContactSection: React.FC = () => {
         </div>
         
         <div className="max-w-4xl mx-auto" ref={formRef}>
-          <div className="visme_d" data-title="my portfolio" data-url="eprgzg7x-my-portfolio?fullPage=true" data-domain="forms" data-full-page="true" data-min-height="100vh" data-form-id="65786"></div>
-          <script src="https://static-bundles.visme.co/forms/vismeforms-embed.js"></script>
+          <div className="visme_d" data-title="my portfolio" data-url="eprgzg7x-my-portfolio" data-domain="forms" data-full-page="false" data-min-height="500px" data-form-id="65786"></div>
         </div>
       </div>
     </section>
