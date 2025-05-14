@@ -4,11 +4,13 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import ThreeDAnimation from "@/components/ThreeDAnimation";
 import gsap from "gsap";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const HeroSection: React.FC = () => {
   const titleRef = useRef<HTMLHeadingElement>(null);
   const subtitleRef = useRef<HTMLParagraphElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
+  const isMobile = useIsMobile();
   
   useEffect(() => {
     const tl = gsap.timeline();
@@ -32,6 +34,13 @@ const HeroSection: React.FC = () => {
     );
   }, []);
 
+  const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section 
       id="home" 
@@ -42,7 +51,7 @@ const HeroSection: React.FC = () => {
       />
       
       <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center justify-between h-[calc(100vh-80px)] gap-8">
-        <div className="lg:w-1/2 z-10">
+        <div className={`lg:w-1/2 z-10 ${isMobile ? 'text-center' : ''}`}>
           <h1 
             ref={titleRef}
             className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 bg-gradient-to-br from-agency-purple via-agency-indigo to-agency-blue bg-clip-text text-transparent"
@@ -51,22 +60,31 @@ const HeroSection: React.FC = () => {
           </h1>
           <p 
             ref={subtitleRef}
-            className="text-lg md:text-xl text-muted-foreground mb-8 max-w-xl"
+            className={`text-lg md:text-xl text-muted-foreground mb-8 ${isMobile ? 'mx-auto' : ''} max-w-xl`}
           >
             Creating Digital Experiences That Inspire.
           </p>
-          <div ref={ctaRef} className="flex flex-wrap gap-4">
-            <Button size="lg" className="rounded-full px-8 group">
+          <div ref={ctaRef} className={`flex ${isMobile ? 'justify-center' : ''} flex-wrap gap-4`}>
+            <Button 
+              size="lg" 
+              className="rounded-full px-8 group"
+              onClick={() => scrollToSection("services")}
+            >
               Explore Services
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Button>
-            <Button size="lg" variant="outline" className="rounded-full px-8">
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="rounded-full px-8"
+              onClick={() => scrollToSection("portfolio")}
+            >
               View Portfolio
             </Button>
           </div>
         </div>
         
-        <div className="lg:w-1/2 h-[400px] lg:h-[600px] w-full">
+        <div className="lg:w-1/2 h-[400px] lg:h-[600px] w-full mt-8 lg:mt-0">
           <div className="w-full h-full">
             <ThreeDAnimation />
           </div>

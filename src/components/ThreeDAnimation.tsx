@@ -3,11 +3,12 @@ import React, { useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
 import * as THREE from "three";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const FloatingLogo = () => {
   const mesh = useRef<THREE.Mesh>(null!);
   const texture = new THREE.TextureLoader().load(
-    "https://res.cloudinary.com/dsgdashea/image/upload/v1715751631/WhatsApp_Image_2024-05-15_at_10.04.19_AM__1_-removebg_ann0nr.png"
+    "https://res.cloudinary.com/dsgdashea/image/upload/v1715153907/a-captivating-cinematic-portrait-of-a-sleek-monito-JcgjDqViSlSwkZxvoQ2u6A-f87Th7i-SeOdw_wp_Z-QnA-removebg-preview_fzg7vg.png"
   );
   
   // Create material with transparent background
@@ -22,9 +23,12 @@ const FloatingLogo = () => {
     mesh.current.position.y = Math.sin(state.clock.getElapsedTime() * 0.5) * 0.2;
   });
 
+  const isMobile = useIsMobile();
+  const scale = isMobile ? 3 : 4;
+
   return (
     <mesh ref={mesh}>
-      <planeGeometry args={[4, 4]} />
+      <planeGeometry args={[scale, scale]} />
       <primitive object={material} />
     </mesh>
   );
