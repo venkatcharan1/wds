@@ -57,6 +57,7 @@ const ThreeDAnimation: React.FC = () => {
         rotateSpeed={0.5}
         autoRotate
         autoRotateSpeed={0.5}
+        enableDamping={false}
       />
     </Canvas>
   );
