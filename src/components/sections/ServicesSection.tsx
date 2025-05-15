@@ -30,15 +30,16 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, icon }) =
         const y = (e.clientY - top) / height;
         
         // Calculate rotation based on mouse position
-        const tiltX = (y - 0.5) * 10; // Max 5 degree tilt
-        const tiltY = (0.5 - x) * 10; // Max 5 degree tilt
+        const tiltX = (y - 0.5) * 10; // Max 10 degree tilt
+        const tiltY = (0.5 - x) * 10; // Max 10 degree tilt
         
         gsap.to(card, {
           rotationX: tiltX,
           rotationY: tiltY,
           transformPerspective: 1000,
           duration: 0.4,
-          ease: "power2.out"
+          ease: "power2.out",
+          boxShadow: "0 0 20px rgba(139, 92, 246, 0.5)" // Purple glow effect
         });
       });
       
@@ -48,7 +49,8 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, icon }) =
           rotationX: 0,
           rotationY: 0,
           duration: 0.7,
-          ease: "elastic.out(1, 0.5)"
+          ease: "elastic.out(1, 0.5)",
+          boxShadow: "0 0 0 rgba(139, 92, 246, 0)" // Remove glow
         });
       });
     }
@@ -57,9 +59,11 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, icon }) =
   return (
     <Card 
       ref={cardRef} 
-      className="bg-card-gradient glass-card border-primary/10 overflow-hidden h-full transition-transform duration-300 hover:translate-y-[-5px]"
+      className="bg-card-gradient border-primary/10 overflow-hidden h-full transition-all duration-300 hover:translate-y-[-5px] cursor-pointer"
     >
-      <CardContent className="p-8 h-full flex flex-col">
+      <CardContent className="p-8 h-full flex flex-col relative">
+        {/* Glow effect border */}
+        <div className="absolute inset-0 opacity-0 transition-opacity duration-300 pointer-events-none rounded-lg border border-agency-purple/50 -m-px group-hover:opacity-100"></div>
         <div className="bg-primary/10 p-4 rounded-2xl w-fit mb-6">
           {icon}
         </div>

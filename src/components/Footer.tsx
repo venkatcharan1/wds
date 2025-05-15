@@ -1,6 +1,6 @@
 
 import React from "react";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, MessageCircle } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 
@@ -58,7 +58,7 @@ const Footer: React.FC = () => {
             </div>
           </div>
           
-          <div>
+          <div className="mt-8 md:mt-0">
             <h4 className="font-bold text-lg mb-4">Quick Links</h4>
             <ul className="space-y-3">
               <li>
@@ -79,7 +79,7 @@ const Footer: React.FC = () => {
             </ul>
           </div>
           
-          <div>
+          <div className="mt-8 md:mt-0">
             <h4 className="font-bold text-lg mb-4">Services</h4>
             <ul className="space-y-3">
               <li>
@@ -97,7 +97,7 @@ const Footer: React.FC = () => {
             </ul>
           </div>
           
-          <div>
+          <div className="mt-8 md:mt-0">
             <h4 className="font-bold text-lg mb-4">Contact Info</h4>
             <ul className="space-y-3">
               <li className="flex items-start">
@@ -114,9 +114,7 @@ const Footer: React.FC = () => {
                 <a href="mailto:telugumobilecoder@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">telugumobilecoder@gmail.com</a>
               </li>
               <li className="flex items-start">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
+                <MessageCircle className="h-5 w-5 mr-2 text-primary" />
                 <a href="tel:+916302158556" className="text-muted-foreground hover:text-primary transition-colors">+91 6302158556</a>
               </li>
             </ul>

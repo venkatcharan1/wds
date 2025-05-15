@@ -95,6 +95,27 @@ const ContactSection: React.FC = () => {
         }
       );
     }
+
+    // Add custom styles to the Visme form
+    const addFormStyles = () => {
+      const vismeIframe = document.querySelector('.visme_d iframe');
+      if (vismeIframe) {
+        // Apply styles to the iframe
+        (vismeIframe as HTMLElement).style.borderRadius = '1rem';
+        (vismeIframe as HTMLElement).style.overflow = 'hidden';
+      }
+    };
+
+    // Check periodically for iframe to be loaded
+    const checkInterval = setInterval(() => {
+      const iframe = document.querySelector('.visme_d iframe');
+      if (iframe) {
+        addFormStyles();
+        clearInterval(checkInterval);
+      }
+    }, 500);
+
+    return () => clearInterval(checkInterval);
   }, []);
 
   return (
@@ -139,8 +160,8 @@ const ContactSection: React.FC = () => {
           />
         </div>
         
-        <div className="max-w-4xl mx-auto" ref={formRef}>
-          <div className="visme_d" data-title="my portfolio" data-url="eprgzg7x-my-portfolio" data-domain="forms" data-full-page="false" data-min-height="500px" data-form-id="65786"></div>
+        <div className="max-w-4xl mx-auto rounded-xl overflow-hidden shadow-lg" ref={formRef}>
+          <div className="visme_d rounded-xl overflow-hidden" data-title="my portfolio" data-url="eprgzg7x-my-portfolio" data-domain="forms" data-full-page="false" data-min-height="500px" data-form-id="65786"></div>
         </div>
       </div>
     </section>
