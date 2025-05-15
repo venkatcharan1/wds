@@ -16,6 +16,7 @@ const WDSLogo = () => {
     transparent: true,
     metalness: 0.2,
     roughness: 0.4,
+    side: THREE.DoubleSide, // Render both sides of the geometry
   });
 
   // Create a plane geometry for the logo
@@ -23,15 +24,18 @@ const WDSLogo = () => {
   
   useFrame((state) => {
     if (group.current) {
+      // Smooth rotation independent of frame rate
       group.current.rotation.y = state.clock.getElapsedTime() * 0.2;
       group.current.position.y = Math.sin(state.clock.getElapsedTime() * 0.5) * 0.2;
     }
   });
 
+  // Adjust position for mobile - move up on mobile devices
+  const yPosition = isMobile ? 0.5 : 0;
   const scale = isMobile ? 0.7 : 1;
 
   return (
-    <group ref={group} scale={scale}>
+    <group ref={group} scale={scale} position={[0, yPosition, 0]}>
       <Center>
         <mesh geometry={planeGeometry}>
           <primitive object={material} attach="material" />
