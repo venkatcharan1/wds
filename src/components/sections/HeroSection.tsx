@@ -84,7 +84,7 @@ const HeroSection: React.FC = () => {
           </div>
         </div>
         
-        <div className="lg:w-1/2 h-[400px] lg:h-[600px] w-full mt-8 lg:mt-0">
+        <div className="lg:w-1/2 h-[400px] lg:h-[500px] w-full mt-8 lg:mt-0 relative">
           <div className="w-full h-full">
             <ThreeDAnimation />
           </div>

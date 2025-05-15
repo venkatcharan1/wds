@@ -1,7 +1,7 @@
 
 import React, { useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { OrbitControls, PerspectiveCamera, Text3D, Center } from "@react-three/drei";
+import { OrbitControls, PerspectiveCamera, Center } from "@react-three/drei";
 import * as THREE from "three";
 import { useIsMobile } from "@/hooks/use-mobile";
 
@@ -9,13 +9,18 @@ const WDSLogo = () => {
   const group = useRef<THREE.Group>(null!);
   const isMobile = useIsMobile();
   
-  // Create material for the 3D text
+  // Create material and texture for the logo
+  const texture = new THREE.TextureLoader().load("https://res.cloudinary.com/dsgdashea/image/upload/v1715771137/android-chrome-512x512_ndmool.png");
   const material = new THREE.MeshStandardMaterial({
-    color: new THREE.Color("#6d28d9"),
-    metalness: 0.8,
-    roughness: 0.2,
+    map: texture,
+    transparent: true,
+    metalness: 0.2,
+    roughness: 0.4,
   });
 
+  // Create a plane geometry for the logo
+  const planeGeometry = new THREE.PlaneGeometry(3, 3);
+  
   useFrame((state) => {
     if (group.current) {
       group.current.rotation.y = state.clock.getElapsedTime() * 0.2;
@@ -28,20 +33,9 @@ const WDSLogo = () => {
   return (
     <group ref={group} scale={scale}>
       <Center>
-        <Text3D
-          font="/fonts/inter_regular.json"
-          size={isMobile ? 1.2 : 1.5}
-          height={0.4}
-          curveSegments={12}
-          bevelEnabled
-          bevelThickness={0.02}
-          bevelSize={0.02}
-          bevelOffset={0}
-          bevelSegments={5}
-        >
-          WDS
+        <mesh geometry={planeGeometry}>
           <primitive object={material} attach="material" />
-        </Text3D>
+        </mesh>
       </Center>
     </group>
   );
