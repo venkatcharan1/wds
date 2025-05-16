@@ -10,14 +10,14 @@ gsap.registerPlugin(ScrollTrigger);
 interface PortfolioItemProps {
   index: number;
   title: string;
-  category: string;
+  projectLink: string;
   imageSrc: string;
 }
 
 const PortfolioItem: React.FC<PortfolioItemProps> = ({ 
   index, 
   title, 
-  category, 
+  projectLink, 
   imageSrc 
 }) => {
   const itemRef = useRef<HTMLDivElement>(null);
@@ -50,8 +50,12 @@ const PortfolioItem: React.FC<PortfolioItemProps> = ({
     >
       <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex items-center justify-center flex-col p-6 transition-opacity duration-300 z-10">
         <h3 className="text-xl font-bold text-white mb-2">{title}</h3>
-        <p className="text-white/80 mb-4">{category}</p>
-        <Button size="sm" variant="outline" className="text-white border-white hover:bg-white hover:text-black transition-colors">
+        <Button 
+          size="sm" 
+          variant="outline" 
+          className="text-white border-white hover:bg-white hover:text-black transition-colors"
+          onClick={() => window.open(projectLink, '_blank')}
+        >
           View Project
         </Button>
       </div>
@@ -110,34 +114,29 @@ const PortfolioSection: React.FC = () => {
 
   const portfolioItems = [
     {
-      title: "Brand Identity",
-      category: "Logo Design",
-      imageSrc: "https://images.unsplash.com/photo-1626785774573-4b799315345d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+      title: "onetooly",
+      imageSrc: "https://res.cloudinary.com/dsgdashea/image/upload/v1747316458/Screenshot_2025-05-15_190658_l3fknm.png",
+      projectLink: "https://onetooly.in/"
     },
     {
-      title: "Adventure App",
-      category: "Mobile UI Design",
-      imageSrc: "https://images.unsplash.com/photo-1512295767273-ac109ac3acfa?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+      title: "studentpep",
+      imageSrc: "https://res.cloudinary.com/dsgdashea/image/upload/v1747316457/Screenshot_2025-05-15_190756_qta9zl.png",
+      projectLink: "https://studentpep.netlify.app/"
     },
     {
-      title: "Creative Agency",
-      category: "Web Design",
-      imageSrc: "https://images.unsplash.com/photo-1634586369152-803a1ddca365?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+      title: "resumewithv",
+      imageSrc: "https://res.cloudinary.com/dsgdashea/image/upload/v1747316457/Screenshot_2025-05-15_190836_hbnhjd.png",
+      projectLink: "https://resumewithv.netlify.app/"
     },
     {
-      title: "Tech Blog Platform",
-      category: "Web Development",
-      imageSrc: "https://images.unsplash.com/photo-1507721999472-8ed4421c4af2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+      title: "samhithadegreecollege",
+      imageSrc: "https://res.cloudinary.com/dsgdashea/image/upload/v1747316458/Screenshot_2025-05-15_190928_fbykrb.png",
+      projectLink: "https://samhithadegreecollege.netlify.app/"
     },
     {
-      title: "Fashion Brand",
-      category: "Branding",
-      imageSrc: "https://images.unsplash.com/photo-1609142621143-2f3aa4356f7b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-    },
-    {
-      title: "Eco Initiative",
-      category: "Web Development",
-      imageSrc: "https://images.unsplash.com/photo-1580927752452-89d86da3fa0a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+      title: "srilakshmiganapthi",
+      imageSrc: "https://res.cloudinary.com/dsgdashea/image/upload/v1747316458/Screenshot_2025-05-15_191006_xzfeyw.png",
+      projectLink: "https://srilakshmiganapathiaalayam.org/"
     }
   ];
 
@@ -169,7 +168,7 @@ const PortfolioSection: React.FC = () => {
               key={index}
               index={index}
               title={item.title}
-              category={item.category}
+              projectLink={item.projectLink}
               imageSrc={item.imageSrc}
             />
           ))}
