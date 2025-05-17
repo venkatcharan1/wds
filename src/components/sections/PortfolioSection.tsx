@@ -152,7 +152,7 @@ const PortfolioSection: React.FC = () => {
             ref={headingRef}
             className="text-3xl md:text-4xl font-bold mb-6"
           >
-            Sample Projects
+            Work
           </h2>
           <p className="text-muted-foreground">
             Explore our latest work showcasing the diversity of our skills and the quality of our execution.
@@ -176,7 +176,7 @@ const PortfolioSection: React.FC = () => {
         
         <div className="text-center mt-12">
           <Button size="lg" variant="outline" className="rounded-full px-8">
-            View All Projects
+            More Projects Coming Soon
           </Button>
         </div>
       </div>

@@ -71,7 +71,7 @@ export default function Navbar() {
       <div className="container mx-auto px-4 flex items-center justify-between">
         <a href="#" className="flex items-center">
           <span className="text-foreground font-poppins font-bold text-xl">
-            Web Design<span className="text-primary">Studio</span>
+            Web Design<span className="text-primary">Services</span>
           </span>
         </a>
 

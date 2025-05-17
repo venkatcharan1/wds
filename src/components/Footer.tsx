@@ -83,16 +83,16 @@ const Footer: React.FC = () => {
             <h4 className="font-bold text-lg mb-4">Services</h4>
             <ul className="space-y-3">
               <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">Motion Animation</a>
+                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">Custom Web Design</a>
               </li>
               <li>
                 <a href="#" className="text-muted-foreground hover:text-primary transition-colors">Graphic Design</a>
               </li>
               <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">Web Design</a>
+                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">E-Commerce</a>
               </li>
               <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">Motion Design</a>
+                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">SEO optimization</a>
               </li>
             </ul>
           </div>

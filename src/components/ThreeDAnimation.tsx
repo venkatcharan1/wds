@@ -14,9 +14,10 @@ const WDSLogo = () => {
   const material = new THREE.MeshStandardMaterial({
     map: texture,
     transparent: true,
-    metalness: 0.2,
+    metalness: 0.3,
     roughness: 0.4,
     side: THREE.DoubleSide, // Render both sides of the geometry
+	emissiveIntensity: 0.5,
   });
 
   // Create a plane geometry for the logo
@@ -31,8 +32,8 @@ const WDSLogo = () => {
   });
 
   // Adjust position for mobile - move up on mobile devices
-  const yPosition = isMobile ? 0.5 : 0;
-  const scale = isMobile ? 0.7 : 1;
+  const yPosition = isMobile ? 2.6 : 0;
+  const scale = isMobile ? 2.0 : 2.2;
 
   return (
     <group ref={group} scale={scale} position={[0, yPosition, 0]}>
@@ -48,10 +49,10 @@ const WDSLogo = () => {
 const ThreeDAnimation: React.FC = () => {
   return (
     <Canvas className="h-full w-full">
-      <PerspectiveCamera makeDefault position={[0, 0, 5]} />
+      <PerspectiveCamera makeDefault position={[0.5, 0, 5]} />
       <ambientLight intensity={0.5} />
-      <directionalLight position={[10, 10, 5]} intensity={1} />
-      <directionalLight position={[-10, -10, -5]} intensity={0.5} />
+      <directionalLight position={[5, 5, 5]} intensity={1} />
+      <directionalLight position={[-5, -5, 5]} intensity={0.5} />
       
       <WDSLogo />
       
