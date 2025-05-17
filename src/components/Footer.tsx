@@ -128,7 +128,8 @@ const Footer: React.FC = () => {
                 </Button>
               </div>
             </div>
-          </div>
+          </div>git commit -m "Initial commit"
+
         </div>
         
         <div className="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-center">
