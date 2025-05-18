@@ -128,7 +128,7 @@ const Footer: React.FC = () => {
                 </Button>
               </div>
             </div>
-          </div>git commit -m "Initial commit"
+          </div>
 
         </div>
         
