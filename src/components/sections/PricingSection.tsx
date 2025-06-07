@@ -149,7 +149,7 @@ const PricingSection: React.FC = () => {
   const websitePlans = [
     {
       title: "Basic",
-      price: "₹4000",
+      price: "₹6000",
       description: "Perfect for small businesses just getting started with an online presence.",
       features: [
         { text: "3 Custom Pages", included: true },
@@ -164,7 +164,7 @@ const PricingSection: React.FC = () => {
     },
     {
       title: "Standard",
-      price: "₹5000",
+      price: "₹8000",
       description: "Our most popular plan, ideal for established businesses looking to grow.",
       features: [
         { text: "5 Custom Pages", included: true },
@@ -180,7 +180,7 @@ const PricingSection: React.FC = () => {
     },
     {
       title: "Premium",
-      price: "₹6000",
+      price: "₹10,000",
       description: "For businesses seeking a comprehensive digital presence with all features.",
       features: [
         { text: "10 Custom Pages", included: true },
@@ -190,7 +190,8 @@ const PricingSection: React.FC = () => {
         { text: "Advanced SEO Setup", included: true },
         { text: "Social Media Integration", included: true },
         { text: "Content Management System", included: true },
-        { text: "Custom Animations", included: true }
+        { text: "Custom Animations", included: true },
+         { text: "Blog/Newsletter", included: true },
       ]
     }
   ];
@@ -198,7 +199,7 @@ const PricingSection: React.FC = () => {
   const ecommercePlans = [
     {
       title: "Basic E-Commerce",
-      price: "₹6000",
+      price: "₹7000",
       description: "Start selling online with a straightforward e-commerce website.",
       features: [
         { text: "Up to 20 Products", included: true },
@@ -213,7 +214,7 @@ const PricingSection: React.FC = () => {
     },
     {
       title: "Standard E-Commerce",
-      price: "₹7000",
+      price: "₹9000",
       description: "Grow your online store with enhanced features and capabilities.",
       features: [
         { text: "Up to 100 Products", included: true },
@@ -229,7 +230,7 @@ const PricingSection: React.FC = () => {
     },
     {
       title: "Premium E-Commerce",
-      price: "₹8000",
+      price: "₹15,000",
       description: "Enterprise-level online store with all features for maximum growth.",
       features: [
         { text: "Unlimited Products", included: true },
